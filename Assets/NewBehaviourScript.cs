@@ -53,6 +53,14 @@ public class NewBehaviourScript : MonoBehaviour
         }
         // Om knappen (S) trycks ned, Åker planet hälften så snabbt. 
 
+        if (Input.GetKey( KeyCode.Space))
+        {
+            rend.color = new Color(Random.Range(0.1f, 1), Random.Range(0.1f, 1), Random.Range(0.1f, 1)); 
+            
+        }
+        // Random fergnyanser inom R,G,B från 0,1 till 1,0.
+
+
         Timer();
 
     }
