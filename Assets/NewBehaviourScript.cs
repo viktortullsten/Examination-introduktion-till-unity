@@ -7,15 +7,23 @@ public class NewBehaviourScript : MonoBehaviour
     public Color color;
     public SpriteRenderer rend;
     public float movespeed = 5f;
-    public float time;
+    public float timer;
+    public float x = 8;
+    public float y = 4;
+    public float z = 180;
+    
+    public float counter;
     // Use this for initialization
     void Start()
     {
+        transform.position = new Vector3 (Random.Range(-x, x), Random.Range(-y, y));
+        // Random start spawn. 
 
-
-
-
+        transform.eulerAngles = new Vector3 (0f, 0f, Random.Range(-z, z ));
+        // Random spawn rotation. 
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -61,18 +69,22 @@ public class NewBehaviourScript : MonoBehaviour
         // Random fergnyanser inom R,G,B från 0,1 till 1,0.
 
 
-        Timer();
+        counter += Time.deltaTime; 
+        if (counter >= timer +1)
+        {
+          timer +=1;
+            print("timer" + ' ' + timer);
 
-    }
-    void Timer()
-    {
-        time += 1 * Time.deltaTime;
-
-        Debug.Log(string.Format("timer: {0}", time));
-      
-    } 
-    // Timer som räknar upp i secunder. 
+        }
+        // Timer räknar upp varge secund.
     
+        
+
+       
+      
+    
+    // Timer som räknar upp i secunder. 
+    }
 }
 
 
